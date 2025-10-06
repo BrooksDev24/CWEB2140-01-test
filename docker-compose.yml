@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  snake:
+  snaketestapp:
     image: schbros/testauto:latest
     build: .
     contaianer_name: testauto
