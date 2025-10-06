@@ -1,7 +1,7 @@
 pipeline{
     agent any
 
-    enviroment
+    environment
     {
         DOCKERHUB_CREDENTIALS = 'cweb-2140-01'
         IMAGE_NAME = 'schbros/testauto:latest'
