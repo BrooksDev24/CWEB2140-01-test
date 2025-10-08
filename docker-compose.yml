@@ -1,14 +1,15 @@
+
 version: "3.8"
 services:
   snaketestapp:
-    image: schbros/testauto:latest
+    image: amalan06/testauto:latest
     build: .
-    contaianer_name: testauto123
-    ports: 
+    container_name: testauto02
+    ports:
       - "80:3000"
-    enviroment:
+    environment:
       - PORT=3000
     volumes:
       - ./:/app
     command: ["node", "app.js"]
-    
+ 
