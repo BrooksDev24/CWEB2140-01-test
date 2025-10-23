@@ -35,6 +35,25 @@ pipeline
                    }
               }
          }
+
+
+
+   stage('SonarQube Analysis') {
+            agent {
+                label 'CWEB-2040-01-app-server'
+            }
+            steps {
+                script {
+                    def scannerHome = tool 'sonarqube'
+                    withSonarQubeEnv('sonarqube') {
+                        sh "${scannerHome}/bin/sonar-scanner \
+                            -Dsonar.projectKey=gameapp \
+                            -Dsonar.sources=."
+                    }
+                }
+            }
+        }
+         
          
  
         stage('BUILD-AND-TAG')
